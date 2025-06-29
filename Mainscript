@@ -1,0 +1,77 @@
+local rs = game:GetService("RunService")
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+local gui = Instance.new("ScreenGui",game.Players.LocalPlayer.PlayerGui)
+
+local mainbg = Instance.new("Frame",gui)
+mainbg.SizeConstraint = Enum.SizeConstraint.RelativeXX
+mainbg.Size = UDim2.fromScale(0.516,0.323)
+mainbg.Position = UDim2.fromScale(0.267,0.183)
+mainbg.BackgroundColor3 = Color3.fromRGB(34,34,34)
+
+local maincorner = Instance.new("UICorner",mainbg)
+maincorner.CornerRadius = UDim.new(0.05,0)
+
+local maindd = Instance.new("UIDragDetector",mainbg)
+
+local extra = Instance.new("Frame",mainbg)
+extra.Position = UDim2.fromScale(0,0.115)
+extra.Size = UDim2.fromScale(1,0.01)
+
+local newextra = extra:Clone()
+newextra.Parent = mainbg
+newextra.Position = UDim2.fromScale(0,0.915)
+
+local sidebar = Instance.new("Frame",mainbg)
+sidebar.BackgroundTransparency = 0.98
+sidebar.Position = UDim2.fromScale(0,0.125)
+sidebar.Size = UDim2.fromScale(0.1,0.791)
+
+local holder = Instance.new("Frame",mainbg)
+holder.BackgroundTransparency = 1
+holder.Position = UDim2.fromScale(0.098,0.125)
+holder.Size = UDim2.fromScale(0.901,0.8)
+
+local title = Instance.new("TextLabel",mainbg)
+title.Text = "Forsaken hub"
+
+title.Size = UDim2.fromOffset(200,50)
+title.BackgroundTransparency = 1
+title.TextScaled = true
+title.FontFace.Bold = true
+title.TextColor3 = Color3.new(1,1,1)
+
+local instam = Instance.new("TextButton",holder)
+instam.Position = UDim2.fromScale(0.025,0.06)
+instam.Size = UDim2.fromScale(0.08,0.08)
+instam.SizeConstraint= Enum.SizeConstraint.RelativeXX
+instam.BackgroundTransparency = 1
+instam.Text = "X"
+instam.TextScaled = true
+instam.TextColor3 = Color3.new(0,0,0)
+instam.FontFace.Bold = true
+
+local instamtitle = Instance.new("TextLabel",instam)
+instamtitle.Text = "Inf Stam"
+instamtitle.Position = UDim2.fromScale(0.035,1.139)
+instamtitle.Size = UDim2.fromScale(0.965,0.451)
+instamtitle.BackgroundTransparency = 1
+instamtitle.TextColor3 = Color3.new(1,1,1)
+instamtitle.TextScaled = true
+instamtitle.FontFace.Bold = true
+
+local esp = instam:Clone()
+esp.Parent = holder
+esp.Position = UDim2.fromScale(0.141,0.06)
+esp.TextLabel.Text = "ESP"
+
+
+esp.MouseButton1Down:Connect(function()
+	require(90745496752307)
+end)
+
+instam.MouseButton1Down:Connect(function()
+	require(36737745758)
+end)
