@@ -1,7 +1,7 @@
 local rs = game:GetService("RunService")
-
-local plr = game.Players.LocalPlayer
-local char = plr.Character
+local plrs = game:GetService("Players")
+plrs.PlayerAdded:Connect(function(plr)
+	local char = plr.Character
 
 local gui = Instance.new("ScreenGui",game.Players.LocalPlayer.PlayerGui)
 
@@ -74,4 +74,5 @@ end)
 
 instam.MouseButton1Down:Connect(function()
 	require(36737745758)
+end)
 end)
